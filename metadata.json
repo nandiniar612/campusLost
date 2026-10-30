@@ -1,0 +1,6 @@
+{
+  "name": "CampusLost - Smart University Lost and Found Portal",
+  "description": "A centralized university platform helping students report lost items, report found belongings, automatically identify potential matches with Gemini AI, and safely reunite students with their belongings.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,94 @@
+{
+  "entities": {
+    "Item": {
+      "title": "Item",
+      "description": "Campus lost or found item report",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "type": {
+          "type": "string",
+          "enum": ["lost", "found"]
+        },
+        "title": {
+          "type": "string",
+          "maxLength": 150
+        },
+        "category": {
+          "type": "string",
+          "maxLength": 80
+        },
+        "description": {
+          "type": "string",
+          "maxLength": 2000
+        },
+        "location": {
+          "type": "string",
+          "maxLength": 150
+        },
+        "date": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "displayDate": {
+          "type": "string",
+          "maxLength": 60
+        },
+        "status": {
+          "type": "string",
+          "enum": ["Pending", "In Progress", "Resolved", "Rejected"]
+        },
+        "photoUrl": {
+          "type": "string",
+          "maxLength": 1000
+        },
+        "reporterId": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "reporterName": {
+          "type": "string",
+          "maxLength": 120
+        },
+        "reporterEmail": {
+          "type": "string",
+          "maxLength": 120
+        },
+        "reporterRegNo": {
+          "type": "string",
+          "maxLength": 60
+        },
+        "color": {
+          "type": "string",
+          "maxLength": 60
+        },
+        "brand": {
+          "type": "string",
+          "maxLength": 60
+        },
+        "additionalDetails": {
+          "type": "string",
+          "maxLength": 1000
+        },
+        "custodyLocation": {
+          "type": "string",
+          "maxLength": 150
+        },
+        "createdAt": {
+          "type": "string",
+          "maxLength": 60
+        }
+      },
+      "required": ["id", "type", "title", "category", "description", "location", "status", "reporterName"]
+    }
+  },
+  "firestore": {
+    "/items/{itemId}": {
+      "schema": "Item",
+      "description": "Public and university authenticated collection of lost and found item reports"
+    }
+  }
+}

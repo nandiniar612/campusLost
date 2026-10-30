@@ -1,0 +1,23 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Test connection
+    match /test/{testId} {
+      allow read, write: if true;
+    }
+
+    // Campus lost and found items collection
+    match /items/{itemId} {
+      allow read: if true;
+      allow create: if true;
+      allow update: if true;
+      allow delete: if request.auth != null;
+    }
+
+    // Default deny catch-all for any other collection
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
